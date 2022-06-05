@@ -37,7 +37,3 @@ def preprocess_message(message: str):
         bits.append(0)
     bits += message_len
     return chunker(bits, 512)
-
-m = preprocess_message('hello world')
-print(m)
-

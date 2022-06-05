@@ -2,8 +2,8 @@ from sha256 import sha256
 import hashlib
 
 m = hashlib.sha256()
-# m.update(b'hello world')
-# print(m.hexdigest())
+m.update(b'hello world')
+print(m.hexdigest())
 print(sha256('hello world'))
 
 # bit length: 0
@@ -14,17 +14,3 @@ print('bit size 0: ', hash_0 == vector_hash_0)
 hash_24 = sha256('abc')
 vector_hash_24 = 'ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad'
 print('bit size 24: ', hash_24 == vector_hash_24)
-# ------------------------------------------------------------------------------------------------------------------#
-# bit length: 448
-hash_448 = sha256('abcdbcdecdefdefgefghfghighijhijkijkljklmklmnlmnomnopnopq')
-m.update(b'abcdbcdecdefdefgefghfghighijhijkijkljklmklmnlmnomnopnopq')
-print(m.hexdigest())
-print(hash_448)
-vector_hash_448 = m.hexdigest()
-print('bit size 448: ', hash_448 == vector_hash_448)
-# bit length: 896
-hash_896 = sha256(
-    'abcdefghbcdefghicdefghijdefghijkefghijklfghijklmghijklmnhijklmnoijklmnopjklmnopqklmnopqrlmnopqrsmnopqrstnopqrstu')
-vector_hash_896 = 'cf5b16a778af8380036ce59e7b0492370b249b11e8f07a51afac45037afee9d1'
-
-print('bit size 896: ', hash_896 == vector_hash_896)
