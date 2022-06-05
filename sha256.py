@@ -33,9 +33,7 @@ def sha256(message):
             c = b
             b = a
             a = add(temp1, temp2)
-        h0, h1, h2, h3, h4, h5, h6, h7 = add(h0, a), add(h1, b), add(h2, c), add(h3, d), add(h4, e), add(h5, f), add(h6,
-                                                                                                                     g), add(
-            h7, h)
+        h0, h1, h2, h3, h4, h5, h6, h7 = add(h0, a), add(h1, b), add(h2, c), add(h3, d), add(h4, e), add(h5, f), add(h6,g), add(h7, h)
         digest = ''
         for val in [h0, h1, h2, h3, h4, h5, h6, h7]:
             digest += b2_to_b16(val)
